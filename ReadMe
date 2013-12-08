@@ -1,3 +1,24 @@
 Initial nodeJS MongoDB test following 
 http://cwbuecheler.com/web/tutorials/2013/node-express-mongo/
 
+This repo does not include the required node modules that should be included
+under node_modules/
+express
+jade
+mongodb
+monk
+
+It looks like an advantage of installing mongodb locally (per project) is not having to set dbpath in the command line. 
+See also /etc/mongodb.conf
+
+I had a global install of express as well: npm install -g express
+but there were problems fixed with a local install. So it goes.
+
+The only other note I want to add right now is this install is on Fedora 18 and no I did not end up using the yum repo:
+yum erase mongo-10gen mongo-10gen-server
+
+"While some of these distributions include their own MongoDB packages, the official MongoDB packages are generally more up to date."
+-- http://docs.mongodb.org
+
+
+
