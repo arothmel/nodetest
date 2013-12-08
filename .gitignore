@@ -1,0 +1,8 @@
+node_modules/
+data/
+
+pids
+logs
+results
+build
+
