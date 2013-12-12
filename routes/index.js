@@ -1,12 +1,18 @@
 
 /*
- * GET home page.
+ * Handling request to GET home page 
+ * so show me something.
+ * Render before mine eyes already
+ -- Question?
+ -- Does that make you a route?
+ * Routing the URI. Oh yah!
  */
 
 exports.index = function(req, res){
   res.render('index', { title: 'Express' });
 };
 
+// res.render calling jade. jade are you in?
 exports.helloworld = function(req, res){
   res.render('helloworld', { title: 'Hello, World!' });
 };
@@ -31,6 +37,10 @@ exports.adduser = function(db) {
 
         // Get our form values. These rely on the "name" attributes
         var userName = req.body.username;
+        var realName = req.body.realname;
+        var phone = req.body.phone;
+        var address = req.body.address;
+        var city = req.body.city;                        
         var userEmail = req.body.useremail;
 
         // Set our collection
@@ -39,6 +49,10 @@ exports.adduser = function(db) {
         // Submit to the DB
         collection.insert({
             "username" : userName,
+            "realname" : realName,
+            "phone" : phone,
+            "address" : address,
+            "city" : city,                                                
             "email" : userEmail
         }, function (err, doc) {
             if (err) {
@@ -55,4 +69,12 @@ exports.adduser = function(db) {
 
     }
 }
+
+
+
+
+
+
+
+
 

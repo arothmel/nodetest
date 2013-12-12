@@ -1,8 +1,12 @@
 extends layout
 
 block content
-  h1= title
+    h1= title
     form#formAddUser(name="adduser",method="post",action="/adduser")
         input#inputUserName(type="text", placeholder="username", name="username")
+        input#inputRealName(type="text", placeholder="realname", name="realname")
+        input#inputPhone(type="text", placeholder="phone", name="phone")
+        input#inputAddress(type="text", placeholder="address", name="address")  
+        input#inputCity(type="text", placeholder="city", name="city")                        
         input#inputUserEmail(type="text", placeholder="useremail", name="useremail")
         button#btnSubmit(type="submit") submit
