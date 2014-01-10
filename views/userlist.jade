@@ -1,15 +1,10 @@
 //-   No comment     
 extends layout
-block content
-    h2.
-        Contact List
-    #userlist
-        - each user in userlist
-          div.user
-            a(href="mailto:#{user.email}")= user.username
-            div.realname= user.realname 
-            div.address= user.address
-            div.city= user.city
-            div.phone= user.phone
 
-    a(href="/newuser")!= "Add New User"
+block content
+    h1.
+        User List
+    ul
+        each user, i in userlist
+            li
+                a(href="mailto:#{user.email}")= user.username

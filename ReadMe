@@ -14,7 +14,7 @@ Jade - use Jade or another templating engine to gain access to our Node/Express-
 Start Database
 ---------------
 MongoDB - MongoDB uses JSON for its structure. How handy is that?
-$ mongod --dbpath /path/to/nodetest1/data
+$ mongod --dbpath /path/to/nodetest2/data
 
 In another terminal 
 

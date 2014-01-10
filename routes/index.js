@@ -19,8 +19,8 @@ exports.helloworld = function(req, res){
 
 exports.userlist = function(db) {
     return function(req, res) {
-        var collection = db.get('usercollection');
-        collection.find({},{},function(e,docs){
+        var collection = db.get('usercollection');   // db usercollection
+        collection.find({},{},function(e,docs){      // return results of find to variable "docs"
             res.render('userlist', {
                 "userlist" : docs
             });
@@ -37,7 +37,6 @@ exports.adduser = function(db) {
 
         // Get our form values. These rely on the "name" attributes
         var userName = req.body.username;
-        var realName = req.body.realname;
         var phone = req.body.phone;
         var address = req.body.address;
         var city = req.body.city;                        
@@ -49,7 +48,6 @@ exports.adduser = function(db) {
         // Submit to the DB
         collection.insert({
             "username" : userName,
-            "realname" : realName,
             "phone" : phone,
             "address" : address,
             "city" : city,                                                
