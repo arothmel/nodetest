@@ -11,6 +11,17 @@ Summary:
 Jade - use Jade or another templating engine to gain access to our Node/Express-based data. Jade's not hard to learn if you already know HTML. 
 (Just remember that you really have to pay attention to indentation or things will go badly wrong.)
 
+To Run on Cloud9
+This caused me endless grief, that isn't really over yet:
+/* --------------------------------------------------------------------
+MongoDB is preinstalled in your workspace. To run MongoDB, run the following below (passing the correct parameters to it). Mongodb data will be stored in the folder data.
+
+$ mkdir data
+$ echo 'mongod --bind_ip=$IP --dbpath=data --nojournal --rest "$@"' > mongod
+$ chmod a+x mongod
+---------------------------------------------------------------------*/
+
+
 Start Database
 ---------------
 MongoDB - MongoDB uses JSON for its structure. How handy is that?
@@ -26,14 +37,13 @@ switched to db nodetest2
 
 Insert Data
 ------------
-db.usercollection.insert({ "username" : "fred", "realname" : "Fred Flintstone", "phone" : "123-4567", "address" : "123 Rocky Rd.", "email" : "fred@bedrock.net" })
+db.usercollection.insert({ "username" : "fred", "phone" : "123-4567", "address" : "123 Rocky Rd.", "email" : "fred@bedrock.net" })
 
  db.usercollection.find().pretty()  // Pretty provides line breaks
 >  db.usercollection.find().pretty()
 {
 	"_id" : ObjectId("52aa0eb3d044355a34033bdd"),
 	"username" : "fred",
-	"realname" : "Fred Flintstone",
 	"phone" : "123-4567",
 	"address" : "123 Rocky Rd.",
 	"email" : "fred@bedrock.net"
@@ -41,7 +51,7 @@ db.usercollection.insert({ "username" : "fred", "realname" : "Fred Flintstone", 
 
 A quick note on DB structure: obviously in the long run you're unlikely to be storing everything at the top level. There are a ton of resources on the internet for schema design in MongoDB. Google is your friend!
 
-newstuff = [{ "username" : "wilma", "realname" : "Wilma Flintstone", "phone" : "123-4567", "address" : "123 Rocky Rd.", "city" : "Bedrock", "email" : "wilma@bedrock.net" }, 
-{ "username" : "Barney", "realname" : "Barney Rubble", "phone" : "123-7654", "address" : "125 Rocky Rd.", "email" : "barney@bedrock.net" }]
+newstuff = [{ "username" : "wilma", "phone" : "123-4567", "address" : "123 Rocky Rd.", "city" : "Bedrock", "email" : "wilma@bedrock.net" }, 
+{ "username" : "Barney", "phone" : "123-7654", "address" : "125 Rocky Rd.", "email" : "barney@bedrock.net" }]
 db.usercollection.insert(newstuff);
 
